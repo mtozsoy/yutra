@@ -1,9 +1,10 @@
 from yutra.core.brain import Brain
 from yutra.llm.client import LLMClient
+from yutra.llm.ollama_client import OllamaClient
 
 
 def main():
-   llm = LLMClient()
+   llm = OllamaClient()
    brain = Brain(llm)
 
 
