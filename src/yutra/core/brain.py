@@ -1,10 +1,16 @@
 from yutra.llm.client import BaseLLM
+from yutra.prompts.system import SYSTEM_PROMPT
 
 
 class Brain:
     def __init__(self, llm: BaseLLM):
         self.llm = llm
-        self.messages = []
+        self.messages = [
+            { 
+                "role": "system",
+                "content": SYSTEM_PROMPT
+            }
+        ]
 
     def think(self, user_input: str) -> str:
         message_that_going_to_add = {
